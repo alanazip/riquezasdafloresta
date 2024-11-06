@@ -4,27 +4,18 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* Aplicando Lato Thin como fonte principal */
+
+/* Fonte principal */
 body {
     font-family: 'Lato', sans-serif;
-    font-weight: 100; /* Peso fino para um visual delicado */
+    font-weight: 100;
     background-color: #fff;
-    color: #4B2E2E; /* Tom de tabaco */
-}
-
-/* Títulos com peso fino */
-h1, h2, h3 {
-    font-weight: 100;
-}
-
-/* Parágrafos e outros textos */
-p {
-    font-weight: 100;
+    color: #4B2E2E;
 }
 
 /* Cabeçalho */
 header {
-    background-color: #4B2E2E; /* Um tom mais escuro de tabaco */
+    background-color: #4B2E2E;
     color: #fff;
     padding: 20px;
     display: flex;
@@ -32,24 +23,66 @@ header {
     align-items: center;
 }
 
-header .logo h1 {
-    font-size: 24px;
+/* Estilo para o logotipo */
+.header-left {
+    flex: 1;
+    text-align: left;
+}
+
+.logo h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 100;
+    color: #FFFFFF;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Ícone centralizado no cabeçalho */
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.header-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* Navegação */
+.header-right {
+    flex: 1;
+    text-align: right;
 }
 
 header nav ul {
     list-style-type: none;
     display: flex;
-    gap: 20px;
+    gap: 0;
+}
+
+header nav ul li {
+    flex: 1;
 }
 
 header nav ul li a {
-    color: #fff;
+    color: #FFFFFF;
     text-decoration: none;
-    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 15px 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Efeito de fundo verde ao passar o mouse */
 header nav ul li a:hover {
-    text-decoration: underline;
+    background-color: #1E402E;
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 /* Conteúdo Principal */
@@ -65,8 +98,16 @@ section#home {
     text-align: center;
 }
 
+h1, h2, h3 {
+    font-weight: 100;
+}
+
 h2 {
-    color: #4B2E2E; /* Usando o mesmo tom de tabaco para destaque */
+    color: #4B2E2E;
+}
+
+p {
+    font-weight: 100;
 }
 
 /* Rodapé */
