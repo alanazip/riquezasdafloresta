@@ -1,0 +1,79 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Aplicando Lato Thin como fonte principal */
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 100; /* Peso fino para um visual delicado */
+    background-color: #fff;
+    color: #4B2E2E; /* Tom de tabaco */
+}
+
+/* Títulos com peso fino */
+h1, h2, h3 {
+    font-weight: 100;
+}
+
+/* Parágrafos e outros textos */
+p {
+    font-weight: 100;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #4B2E2E; /* Um tom mais escuro de tabaco */
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    font-size: 24px;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Conteúdo Principal */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section#home {
+    text-align: center;
+}
+
+h2 {
+    color: #4B2E2E; /* Usando o mesmo tom de tabaco para destaque */
+}
+
+/* Rodapé */
+footer {
+    background-color: #4B2E2E;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
