@@ -194,3 +194,23 @@ body {
     text-transform: uppercase;
     margin: 0;
 }
+/* Estilo para os ícones sem sublinhado */
+.header-icon {
+    text-decoration: none !important; /* Força a remoção do sublinhado */
+    color: #4B2E2E; /* Cor do ícone */
+    font-size: 24px; /* Ajuste o tamanho do ícone conforme necessário */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+/* Remove sublinhado ao passar o mouse */
+.header-icon:hover {
+    text-decoration: none !important; /* Garante que o sublinhado não apareça ao passar o mouse */
+    background-color: #f0f0f0; /* Ajuste a cor de fundo ao passar o mouse */
+}
