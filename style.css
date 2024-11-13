@@ -13,7 +13,7 @@ body {
     color: #4B2E2E;
 }
 
-/* Cabeçalho superior */
+/* Cabeçalho principal */
 .header-top {
     background-color: #4B2E2E;
     color: #fff;
@@ -22,129 +22,41 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
-/* Logo à esquerda */
+/* Logo e ícone à esquerda */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+}
+
 .header-left h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     font-weight: 100;
     color: #FFFFFF;
     text-transform: uppercase;
-    margin: 0;
 }
 
 /* Campo de busca centralizado */
 .header-center {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex: 2;
 }
 
 .search-input {
-    width: 60%;
-    max-width: 250px;
-    padding: 8px 15px;
-    font-size: 16px;
-    color: #4B2E2E;
-    background-color: #FFFFFF;
-    border: 2px solid #ddd;
-    border-radius: 25px 0 0 25px;
-    outline: none;
-    text-align: center;
-}
-
-.search-btn {
-    padding: 8px 15px;
-    background-color: #FFFFFF;
-    border: 2px solid #ddd;
-    border-left: none;
-    border-radius: 0 25px 25px 0;
-    color: #4B2E2E;
-    cursor: pointer;
-}
-
-/* Ícones e itens à direita */
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.header-icon {
-    background-color: #FFFFFF;
-    color: #4B2E2E;
-    border-radius: 50%;
-    padding: 8px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.header-icon:hover {
-    background-color: #e6e6e6;
-}
-
-/* Barra de categorias */
-.category-nav {
-    background-color: #4B2E2E;
-    padding: 10px;
-    text-align: center;
-}
-
-.category-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.category-nav ul li a {
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 8px 16px;
-    transition: background-color 0.3s;
-    border-radius: 5px;
-}
-
-.category-nav ul li a:hover {
-    background-color: #1E402E;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .header-top {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .category-nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .search-input {
-        width: 100%;
-    }
-}
-/* Estilo para o campo de busca */
-.header-center {
-    display: flex;
-    align-items: center;
-    flex: 2;
-    justify-content: center;
-}
-
-.search-input {
-    width: 70%;
-    max-width: 300px;
-    padding: 10px 20px;
+    width: 80%;
+    max-width: 500px;
+    padding: 10px 15px;
     font-size: 16px;
     color: #4B2E2E;
     background-color: #F5F5F5;
@@ -152,7 +64,6 @@ body {
     border-radius: 30px;
     outline: none;
     text-align: left;
-    transition: all 0.3s ease;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -174,15 +85,129 @@ body {
 .search-btn:hover {
     color: #1E402E;
 }
-/* Estilo para o logotipo com ícone */
+
+/* Ícones à direita */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-icon {
+    background-color: #FFFFFF;
+    color: #4B2E2E;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none; /* Remove sublinhado */
+}
+
+.header-icon:hover {
+    background-color: #f0f0f0;
+}
+
+/* Barra de categorias com rolagem horizontal */
+.category-nav {
+    background-color: #4B2E2E;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+.category-nav ul {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.category-nav ul li {
+    flex: none;
+}
+
+.category-nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 16px;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.category-nav ul li a:hover {
+    background-color: #1E402E;
+    color: #d3d3d3;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-left,
+    .header-right {
+        order: 1;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .header-center {
+        order: 2;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .search-input {
+        width: 90%;
+    }
+
+    .header-right {
+        order: 3;
+        margin-top: 10px;
+        justify-content: center;
+    }
+}
+/* Estilos básicos do layout */
+body, html {
+    font-family: 'Lato', sans-serif;
+    background-color: #fff;
+    color: #4B2E2E;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Cabeçalho superior */
+.header-top {
+    background-color: #4B2E2E;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo e título */
 .header-left {
     display: flex;
     align-items: center;
-    gap: 10px; /* Espaço entre o ícone e o título */
+    gap: 10px;
 }
 
 .logo-icon {
-    width: 40px; /* Ajuste o tamanho conforme necessário */
+    width: 40px;
     height: 40px;
 }
 
@@ -192,25 +217,65 @@ body {
     font-weight: 100;
     color: #FFFFFF;
     text-transform: uppercase;
-    margin: 0;
 }
-/* Estilo para os ícones sem sublinhado */
-.header-icon {
-    text-decoration: none !important; /* Força a remoção do sublinhado */
-    color: #4B2E2E; /* Cor do ícone */
-    font-size: 24px; /* Ajuste o tamanho do ícone conforme necessário */
-    display: flex;
+
+/* Botão "Home" */
+.home-button {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+}
+
+.home-icon {
     width: 50px;
     height: 50px;
     background-color: #FFFFFF;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
 }
 
-/* Remove sublinhado ao passar o mouse */
-.header-icon:hover {
-    text-decoration: none !important; /* Garante que o sublinhado não apareça ao passar o mouse */
-    background-color: #f0f0f0; /* Ajuste a cor de fundo ao passar o mouse */
+.home-icon:hover {
+    background-color: #e0e0e0;
+}
+
+/* Conteúdo principal */
+main {
+    padding: 20px;
+}
+
+main h2 {
+    font-size: 24px;
+    color: #4B2E2E;
+    margin-bottom: 20px;
+}
+
+/* Botão WhatsApp */
+.whatsapp-button {
+    display: inline-block;
+    background-color: #25D366;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 15px; /* Adiciona espaço entre o texto e o botão */
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background-color: #1DAA59;
+}
+
+/* Rodapé */
+footer {
+    background-color: #4B2E2E;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
 }
