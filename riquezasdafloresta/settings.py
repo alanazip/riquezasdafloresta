@@ -76,14 +76,16 @@ WSGI_APPLICATION = 'riquezasdafloresta.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'riqDB',  # Substitua pelo nome do banco de dados criado
-        'USER': 'root',            # Ou o usuário do MySQL que você configurou
-        'PASSWORD': 'alana',       # Sua senha MySQL
-        'HOST': 'localhost',       # Ou IP do servidor MySQL
-        'PORT': '3306',            # Porta padrão do MySQL
+        'NAME': 'riqDB',
+        'USER': 'root',
+        'PASSWORD': 'alana',
+        'HOST': 'localhost',  # Certifique-se de que este é o host correto
+        'PORT': '3306',       # Certifique-se de que esta é a porta correta
+        'OPTIONS': {
+            'unix_socket': '/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock',  # Substitua se necessário
+        },
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
